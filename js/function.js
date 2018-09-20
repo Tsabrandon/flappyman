@@ -39,8 +39,8 @@
           this.kryptonite.enableBody = true;  // Add physics to the group  
           this.kryptonite.createMultiple(20, 'kryptonite'); // Create 20 pipes
           
-          this.timer = game.time.events.loop(1500, this.addRowOfPipes, this);
-          this.score = 0;  
+          this.timer = game.time.events.loop(1000, this.addRowOfPipes, this);
+          this.score = -1;  
           this.labelScore = game.add.text(20, 20, "0", { font: "30px Arial", fill: "#ffffff" });
           this.hero.anchor.setTo(-0.2, 0.5); 
       },
@@ -84,8 +84,7 @@
           kryptonite.reset(x, y);
   
           // Add velocity to the pipe to make it move left
-          kryptonite.body.velocity.x = -200; 
-  
+          kryptonite.body.velocity.x = -300; 
           // Kill the pipe when it's no longer visible 
           kryptonite.checkWorldBounds = true;
           kryptonite.outOfBoundsKill = true;
